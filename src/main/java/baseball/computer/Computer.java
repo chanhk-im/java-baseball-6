@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Computer {
     private static Computer instance;
-    private ArrayList<Integer> computerNumbers;
+    private final ArrayList<Integer> computerNumbers;
 
     public static Computer getInstance() {
         if (instance == null) {
@@ -17,7 +17,7 @@ public class Computer {
     }
 
     public Computer() {
-        this.computerNumbers = new ArrayList<Integer>(3);
+        this.computerNumbers = new ArrayList<>(3);
     }
 
     public ArrayList<Integer> getComputerNumbers() {

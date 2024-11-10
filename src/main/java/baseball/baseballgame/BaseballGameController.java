@@ -13,7 +13,7 @@ public class BaseballGameController {
     private final Computer computer;
 
     BaseballGameController() {
-        playerNumbers = new ArrayList<Integer>(Constants.NUMBER_COUNT);
+        playerNumbers = new ArrayList<>(Constants.NUMBER_COUNT);
         baseballGameView = new BaseballGameView();
         computer = Computer.getInstance();
     }
@@ -21,7 +21,7 @@ public class BaseballGameController {
     public void gameStart() {
         baseballGameView.printGameStart();
 
-        while (true) {
+        do {
             computer.putRandomNumbers();
             while (true) {
                 int[] ballAndStrike;
@@ -37,10 +37,7 @@ public class BaseballGameController {
 
             baseballGameView.printGameEnd();
             baseballGameView.printRestart();
-            if (!baseballGameView.getPlayerRestart()) {
-                break;
-            }
-        }
+        } while (baseballGameView.getPlayerRestart());
     }
 
     public static BaseballGameController getInstance() {

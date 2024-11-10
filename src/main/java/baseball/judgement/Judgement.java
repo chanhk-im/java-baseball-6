@@ -17,9 +17,6 @@ public class Judgement {
         ArrayList<Integer> playerNumbers = controller.getPlayerNumbers();
         ArrayList<Integer> computerNumbers = computer.getComputerNumbers();
 
-        ballAndStrike[0] = 0;
-        ballAndStrike[1] = 0;
-
         for (int i = 0; i < Constants.NUMBER_COUNT; i++) {
             if (Objects.equals(playerNumbers.get(i), computerNumbers.get(i))) {
                 ballAndStrike[1]++;
